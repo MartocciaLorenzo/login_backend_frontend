@@ -7,6 +7,13 @@ var port = 3000;
 var host = "localhost";
 
 apiServer.listen(port, host, () => {
-  console.log("server running at https://%s:d%", host, port);
+    console.log("server running at https://%s:d%", host, port);
 });
 
+apiServer.get("/api/login", (req, res) => {
+    console.log("ricevuti:", req.query.mail, req.query.password)
+    if(req.query.mail === "lorenzo" && req.query.password === "martoccia"){
+        res.sendStatus(200);
+    }
+    res.sendStatus(400);
+})
