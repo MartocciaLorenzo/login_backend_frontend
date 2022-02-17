@@ -13,7 +13,8 @@ apiServer.listen(port, host, () => {
 apiServer.get("/api/login", (req, res) => {
     console.log("ricevuti:", req.query.mail, req.query.password)
     if(req.query.mail === "lorenzo" && req.query.password === "martoccia"){
-        res.sendStatus(200);
+        res.statusCode = 200;
+        res.json({"message:" : "login effettuato"})
     }
     res.sendStatus(400);
 })
