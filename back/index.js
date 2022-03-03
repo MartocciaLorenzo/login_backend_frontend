@@ -4,6 +4,7 @@ var cors = require("cors");
 apiServer.use(cors());
 var fs = require("fs");
 const { stringify } = require("querystring");
+const mysql = require('mysql2');
 
 var host = "localhost";
 var port = 3000;
